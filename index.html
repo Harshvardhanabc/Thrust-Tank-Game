@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>ECHOBOUND: The Road Remembers You</title>
+<meta name="description" content="You drive the road. The road remembers you.">
+<link rel="stylesheet" href="style.css"></head>
+<body><div id="app">
+<canvas id="c"></canvas>
+<div id="nogl" hidden><h2>WebGL is unavailable</h2><p>ECHOBOUND needs WebGL. Try a current version of Chrome, Firefox, Safari or Edge with hardware acceleration on.</p></div>
+<div id="hud" hidden>
+ <div class="row"><span>SCORE <b id="hScore">0</b></span><span>RINGS <b id="hRings">0</b></span><span>FLIPS <b id="hFlips">0</b></span><span>ROT <b id="hRot">0°</b></span><span><b id="hSpd">0</b> mph</span><button id="bPause" class="mini" aria-label="Pause">II</button></div>
+ <div class="gas" title="Gas"><i id="gasBar"></i></div>
+</div>
+<div id="lights" hidden aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div id="msg" role="status" aria-live="polite"></div>
+<div id="echo" aria-live="polite"></div>
+<div id="ctl" hidden>
+ <button id="bGo" class="big" tabindex="-1">LAUNCH</button>
+ <div id="airctl"><button id="bL" tabindex="-1" aria-label="Rotate left">&#8630;</button><button id="bR" tabindex="-1" aria-label="Rotate right">&#8631;</button><button id="bT" class="big" tabindex="-1">THRUST</button></div>
+</div>
+
+<section id="pTitle" class="panel">
+ <h1>ECHOBOUND</h1><p class="sub">The Road Remembers You</p>
+ <p class="tag">You drive the road. The road remembers you.</p>
+ <button id="bStart" class="cta">Start driving</button>
+ <p id="stats" class="stats"></p>
+ <ul class="how"><li><b>Space</b> launch on green, thrust in the air</li><li><b>← →</b> rotate in flight</li><li><b>Esc</b> pause · <b>R</b> restart</li><li>Touch: use the on-screen buttons</li><li>Ramp speed 76–90 mph depends on your reaction. Land upright, sink speed 39 ft/s or less.</li></ul>
+ <div class="set"><label><input type="checkbox" id="mute"> Mute</label><label>Volume <input type="range" id="vol" min="0" max="100" value="60"></label><button id="bReset" class="link">Reset progress</button></div>
+</section>
+
+<section id="pPause" class="panel" hidden><h2>Paused</h2><button id="bResume" class="cta">Resume</button><button id="bRestart" class="sec">Restart run</button><button id="bMenu1" class="sec">Main menu</button></section>
+
+<section id="pRes" class="panel" hidden>
+ <div class="resTop"><div id="grade" class="grade">-</div><div><div id="rStatus" class="status"></div><div class="big2"><span id="rScore">0</span><em id="rBest" hidden>NEW BEST</em></div><div id="rPB" class="sm"></div></div></div>
+ <p id="rEcho" class="echoLine"></p>
+ <table id="rTable"></table>
+ <p id="rUnlock" class="sm"></p>
+ <p class="sm" id="rRubric">Grade: S 8000+, A 6000+, B 4500+, C 3000+, D below. A crash caps the grade at C.</p>
+ <div class="btns"><button id="bAgain" class="cta">Run it again</button><button id="bShare" class="sec">Share result</button><button id="bMenu2" class="sec">Main menu</button></div>
+ <p id="shareNote" class="sm" role="status"></p>
+</section>
+<footer>Unofficial fan game, not affiliated with Tesla. · <a href="privacy.html">Privacy</a></footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body></html>

@@ -1,0 +1,5 @@
+# ads.txt placeholder for ECHOBOUND.
+# No advertising is enabled. Before enabling ads, replace this comment with the
+# authorized seller record(s) issued by your real advertising provider, in the form:
+#   <ad system domain>, <publisher account ID>, <DIRECT|RESELLER>, <certification authority ID, optional>
+# Do not invent publisher IDs. Also update privacy.html when ads are introduced.
